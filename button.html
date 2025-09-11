@@ -49,7 +49,7 @@
                 count++;
                 document.getElementById("counterDisplay").innerText = count;
                 localStorage.setItem("count", count);
-                updateMakeState();
+                updateButtonState();
             }
         }
         
@@ -60,7 +60,7 @@
                 count--;
                 document.getElementById("counterDisplay").innerText = count;
                 localStorage.setItem("count", count);
-                updateDestroyState();
+                updateButtonState();
             }
         }
         updateButtonState();
