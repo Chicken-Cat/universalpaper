@@ -10,11 +10,13 @@
     <button onclick="incrementCounter()">Make Paper</button>
 
     <script>
-    let count = 0;
+    let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
+    document.getElementById("counterDisplay").innerText = count;
     function incrementCounter() {
         count++;
         document.getElementById("counterDisplay").innerText = count;
-    }
+        localStorage.setItem("count", count);
+        }
     </script>
 </body>
 </html>
