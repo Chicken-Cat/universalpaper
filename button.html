@@ -13,20 +13,17 @@
     let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
     document.getElementById("counterDisplay").innerText = count;
     function incrementCounter() {
-        count--;
+        if (count > 10) { // Example threshold
+        myButton.disabled = false; // Enable the button
+        } else {
+            myButton.disabled = true; // Disable the button
+        }
+        count++;
         document.getElementById("counterDisplay").innerText = count;
         localStorage.setItem("count", count);
         updateButtonState();
         }
         const myButton = document.getElementById("myButton");
-
-    function updateButtonState() {
-        if (count > 10) { // Example threshold
-            myButton.disabled = false; // Enable the button
-        } else {
-            myButton.disabled = true; // Disable the button
-        }
-    }
     </script>
 </body>
 </html>
