@@ -10,7 +10,11 @@
     <button onclick="incrementCounter()">Make Paper</button>
 
     <script>
-        // JavaScript code will go here
+    let count = 0;
+    function incrementCounter() {
+        count++;
+        document.getElementById("counterDisplay").innerText = count;
+    }
     </script>
 </body>
 </html>
