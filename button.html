@@ -7,13 +7,14 @@
 </head>
 <body>
     <p>Current Count: <span id="counterDisplay">0</span></p>
-    <button onclick="incrementCounter()">Make Paper</button>
+    <button onclick="makepaper()">Make Paper</button>
+    <button onclick="destroypaper()">Destroy Paper</button>
 
     <script>
     let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
     document.getElementById("counterDisplay").innerText = count;
-    function incrementCounter() {
-        if (count > 10) { // Example threshold
+    function makepaper() {
+        if (count < 10) { // Example threshold
         myButton.disabled = false; // Enable the button
         } else {
             myButton.disabled = true; // Disable the button
@@ -22,8 +23,14 @@
         document.getElementById("counterDisplay").innerText = count;
         localStorage.setItem("count", count);
         updateButtonState();
-        }
+    }
         const myButton = document.getElementById("myButton");
+    function destroypaper() {
+        count--;
+        document.getElementById("counterDisplay").innerText = count;
+        localStorage.setItem("count", count);
+        updateButtonState();
+    }
     </script>
 </body>
 </html>
