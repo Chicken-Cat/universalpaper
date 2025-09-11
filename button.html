@@ -7,30 +7,47 @@
 </head>
 <body>
     <p>Current Count: <span id="counterDisplay">0</span></p>
-    <button onclick="makepaper()">Make Paper</button>
-    <button onclick="destroypaper()">Destroy Paper</button>
+    <button id="makeButton" onclick="makepaper()">Make Paper</button>
+    <button id="destroyButton" onclick="destroypaper()">Destroy Paper</button>
 
     <script>
-    let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
-    document.getElementById("counterDisplay").innerText = count;
-    function makepaper() {
-        if (count < 10) { // Example threshold
-        myButton.disabled = false; // Enable the button
-        } else {
-            myButton.disabled = true; // Disable the button
+        let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
+        document.getElementById("counterDisplay").innerText = count;
+
+        const makeButton = document.getElementById("makeButton");
+
+        function updateButtonState() 
+        {
+            if (count >= 10) 
+            {
+                makeButton.disabled = true;
+            } else {
+                makeButton.disabled = false;
+            }
         }
-        count++;
-        document.getElementById("counterDisplay").innerText = count;
-        localStorage.setItem("count", count);
+
+        function makepaper() 
+        {
+            if (count < 10) 
+            {
+                count++;
+                document.getElementById("counterDisplay").innerText = count;
+                localStorage.setItem("count", count);
+                updateButtonState();
+            }
+        }
+        
+        function destroypaper() 
+        {
+            if (count > 0) 
+            {
+                count--;
+                document.getElementById("counterDisplay").innerText = count;
+                localStorage.setItem("count", count);
+                updateButtonState();
+            }
+        }
         updateButtonState();
-    }
-        const myButton = document.getElementById("myButton");
-    function destroypaper() {
-        count--;
-        document.getElementById("counterDisplay").innerText = count;
-        localStorage.setItem("count", count);
-        updateButtonState();
-    }
     </script>
 </body>
 </html>
