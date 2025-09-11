@@ -16,7 +16,7 @@
 
         const makeButton = document.getElementById("makeButton");
 
-        function updateButtonState() 
+        function updateMakeState() 
         {
             if (count >= 10) 
             {
@@ -26,6 +26,22 @@
             }
         }
 
+        function updateDestroyState()
+        {
+            if (count <=0)
+            {
+                makeButton.disabled = true;
+            } else { 
+                makeButton.disabled = false;
+            }
+        }
+
+        function updateButtonState()
+        {
+            updateMakeState();
+            updateDestroyState();
+        }
+        
         function makepaper() 
         {
             if (count < 10) 
@@ -44,7 +60,7 @@
                 count--;
                 document.getElementById("counterDisplay").innerText = count;
                 localStorage.setItem("count", count);
-                updateButtonState();
+                updateDestroyState();
             }
         }
         updateButtonState();
