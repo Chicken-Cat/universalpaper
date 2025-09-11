@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Increment Counter</title>
+    <title>Universal Paper</title>
 </head>
 <body>
-    <p>Current Count: <span id="counterDisplay">0</span></p>
-    <p>Paper Presses: <span id="autoDisplay">1</span></p>
+    <p style="font-size: 30px;">Current Count: <span id="counterDisplay">0</span></p>
+    <p>Paper Presses: <span id="autoDisplay">0</span></p>
     <button id="makeButton" onclick="makepaper()">Make Paper</button>
     <button id="destroyButton" onclick="destroypaper()">Destroy Paper</button>
+    <button id="buyauto1" onclick="makepaper()">Buy Paper Press</button>
+    <p>Paper Presses: <span id="autoDisplay">0</span></p>
 
     <script>
         let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
