@@ -7,17 +7,37 @@
 </head>
 <body>
     <p style="font-size: 30px;">Current Count: <span id="counterDisplay">0</span></p>
-    <p>Paper Presses: <span id="autoDisplay">0</span></p>
+    <p>Paper Presses: <span id="autoDisplay1">0</span></p>
     <button id="makeButton" onclick="makepaper()">Make Paper</button>
     <button id="destroyButton" onclick="destroypaper()">Destroy Paper</button>
+    <br>
     <button id="buyauto1" onclick="makepaper()">Buy Paper Press</button>
-    <p>Paper Presses: <span id="autoDisplay">0</span></p>
+    <p>Cost: <span id="autoCost">0</span></p>
 
     <script>
         let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
         document.getElementById("counterDisplay").innerText = count;
 
+        let auto1 = localStorage.getItem("auto1") ? parseInt(localStorage.getItem("auto1")) : 0;
+        document.getElementById("autoDisplay1").innerText = auto1;
+
         const makeButton = document.getElementById("makeButton");
+
+
+       setInterval(() => {
+        count++;
+        document.getElementById("counterDisplay").innerText = count;
+        localStorage.setItem("count", count);
+        updateButtonState();    
+        }, <1000>)
+                    
+        function auto1generation()
+            {
+                count++;
+                document.getElementById("counterDisplay").innerText = count;
+                localStorage.setItem("count", count);
+                updateButtonState();
+            }
 
         function updateMakeState() 
         {
