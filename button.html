@@ -30,9 +30,9 @@
         {
             if (count <=0)
             {
-                makeButton.disabled = true;
+                destroyButton.disabled = true;
             } else { 
-                makeButton.disabled = false;
+                destroyButton.disabled = false;
             }
         }
 
@@ -49,7 +49,7 @@
                 count++;
                 document.getElementById("counterDisplay").innerText = count;
                 localStorage.setItem("count", count);
-                updateButtonState();
+                updateMakeState();
             }
         }
         
