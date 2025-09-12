@@ -11,7 +11,7 @@
     <button id="makeButton" onclick="makepaper()">Make Paper</button>
     <button id="destroyButton" onclick="destroypaper()">Destroy Paper</button>
     <br>
-    <button id="buyauto1" onclick="makepaper()">Buy Paper Press</button>
+    <button id="buyauto1" onclick="buyauto1()">Buy Paper Press</button>
     <p>Cost: <span id="autoCost">0</span></p>
 
     <script>
@@ -22,19 +22,19 @@
         document.getElementById("autoDisplay1").innerText = auto1;
 
         const interval = setInterval(() => {
-            count++;
+            count = count + auto1;
             document.getElementById("counterDisplay").innerText = count;
             localStorage.setItem("count", count);
             updateButtonState();
         }, 1000);
 
         const makeButton = document.getElementById("makeButton");
-                    
-        function auto1generation()
+
+        function buyauto1()
             {
-                count++;
-                document.getElementById("counterDisplay").innerText = count;
-                localStorage.setItem("count", count);
+                auto1++
+                document.getElementById("autoDisplay1").innerText = auto1;
+                localStorage.setItem("auto1", auto1);
                 updateButtonState();
             }
 
