@@ -21,6 +21,14 @@
         let auto1 = localStorage.getItem("auto1") ? parseInt(localStorage.getItem("auto1")) : 0;
         document.getElementById("autoDisplay1").innerText = auto1;
 
+        const interval = setInterval(auto1make() {
+        count++
+        document.getElementById("counterDisplay").innerText = count;
+        localStorage.setItem("count", count);
+        updateButtonState();
+        }, 1000)
+        clearInterval(interval);
+
         const makeButton = document.getElementById("makeButton");
                     
         function auto1generation()
