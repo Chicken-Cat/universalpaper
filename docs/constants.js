@@ -1,3 +1,11 @@
-// stuff that is ALWAYS happening
-// paper makers, time played, random events
-// those go HERE so i can stay organized and for you, my beloved player who wanted to look through my code
+// this is gonna be sorted ig 
+// gonna be everything that happens upon a button click or is constantly happening
+// events, automation, that stuff
+
+// ------------------------FUNCTIONS------------------------------------
+// this is for button presses for html to call upon
+
+function paperbutton()
+{
+  // i forgot the normal paper variable already lol
+}
