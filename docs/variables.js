@@ -1,3 +1,7 @@
+// this is just a page for all my variables
+// it helps me with finding any, changing them, that stuff
+// ill leave comments on most, explaining what they are to help both you and me (hi future me)
+
 var paper = 0; //paper in inventory
 var allPaper = 0; //all paper ever made, including sold
 var paperSold = 0; //paper sold in total
