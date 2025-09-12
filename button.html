@@ -12,7 +12,7 @@
     <button id="destroyButton" onclick="destroypaper()">Destroy Paper</button>
     <br>
     <button id="buyauto1" onclick="buyauto1()">Buy Paper Press</button>
-    <p>Cost: <span id="autoCost">0</span></p>
+    <p>Cost: <span id="auto1Cost">0</span></p>
 
     <script>
         let count = localStorage.getItem("count") ? parseInt(localStorage.getItem("count")) : 0;
@@ -20,6 +20,9 @@
 
         let auto1 = localStorage.getItem("auto1") ? parseInt(localStorage.getItem("auto1")) : 0;
         document.getElementById("autoDisplay1").innerText = auto1;
+
+        let auto1Cost = localStorage.getItem("auto1") ? parseInt(localStorage.getItem("auto1")) : 0;
+        document.getElementById("autoDisplay1").innerText = auto;
 
         const interval = setInterval(() => {
             count = count + auto1;
@@ -40,7 +43,7 @@
 
         function updateMakeState() 
         {
-            if (count >= 10) 
+            if (count <= 10) 
             {
                 makeButton.disabled = true;
             } else {
