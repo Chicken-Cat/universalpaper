@@ -21,8 +21,8 @@
         let auto1 = localStorage.getItem("auto1") ? parseInt(localStorage.getItem("auto1")) : 0;
         document.getElementById("autoDisplay1").innerText = auto1;
 
-        let auto1Cost = localStorage.getItem("auto1") ? parseInt(localStorage.getItem("auto1")) : 0;
-        document.getElementById("autoDisplay1").innerText = auto;
+        let auto1Cost = localStorage.getItem("auto1Cost") ? parseInt(localStorage.getItem("auto1Cost")) : 0;
+        document.getElementById("auto1Cost").innerText = auto;
 
         const interval = setInterval(() => {
             count = count + auto1;
